@@ -42,19 +42,19 @@ export const ExecutionStepsGallery: React.FC = () => {
   ];
 
   return (
-    <section id="execution-steps" className="py-8 border-b border-neutral-850">
+    <section id="execution-steps" className="py-8 border-b border-neutral-200">
       <div className="mx-auto max-w-4xl">
-        <div className="flex items-center gap-2 text-xs font-semibold text-cyan-400 mb-1.5">
+        <div className="flex items-center gap-2 text-xs font-semibold text-cyan-700 mb-1.5">
           <span>روایت تصویری ترتیبی</span>
-          <span aria-hidden="true">·</span>
+          <span aria-hidden="true" className="text-neutral-300">·</span>
           <span>مشاهده متوالی زیر هم</span>
         </div>
 
-        <h2 className="text-lg sm:text-xl font-bold text-neutral-100 tracking-tight mb-2">
+        <h2 className="text-lg sm:text-xl font-bold text-neutral-900 tracking-tight mb-2">
           مراحل تصویری اجرایی به ترتیب (زیر هم)
         </h2>
 
-        <p className="text-xs sm:text-sm text-neutral-400 mb-6 leading-relaxed">
+        <p className="text-xs sm:text-sm text-neutral-600 mb-6 leading-relaxed">
           تمام مراحل از زمان ارور تا اجرای موفق به صورت پیوسته در زیر نمایش داده شده است (برای مشاهده تمام‌صفحه روی هر عکس کلیک کنید):
         </p>
 
@@ -63,18 +63,18 @@ export const ExecutionStepsGallery: React.FC = () => {
           {steps.map((st) => (
             <div
               key={st.stepNumber}
-              className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-3.5 sm:p-5"
+              className="rounded-2xl border border-neutral-200 bg-white p-4 sm:p-6 shadow-xs"
             >
               {/* Step Header */}
-              <div className="flex items-start gap-3 pb-3 mb-3 border-b border-neutral-800">
-                <div className="flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-bold font-mono">
+              <div className="flex items-start gap-3 pb-3 mb-3 border-b border-neutral-200">
+                <div className="flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200 text-xs font-bold font-mono">
                   {st.stepNumber}
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-base font-bold text-neutral-100">
+                  <h3 className="text-sm sm:text-base font-bold text-neutral-900">
                     {st.title}
                   </h3>
-                  <p className="text-xs text-neutral-300 mt-1 leading-relaxed">
+                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
                     {st.description}
                   </p>
                 </div>
@@ -83,35 +83,35 @@ export const ExecutionStepsGallery: React.FC = () => {
               {/* Primary Image */}
               <div
                 onClick={() => setZoomedImage(st.image)}
-                className="cursor-zoom-in group overflow-hidden rounded-xl border border-neutral-800 bg-black shadow-xl relative mb-2"
+                className="cursor-zoom-in group overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100/70 shadow-xs relative mb-2 p-1"
               >
                 <img
                   src={st.image}
                   alt={st.title}
-                  className="w-full max-h-[540px] object-contain mx-auto group-hover:scale-[1.008] transition-transform duration-200"
+                  className="w-full max-h-[540px] object-contain mx-auto rounded-lg group-hover:scale-[1.008] transition-transform duration-200"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/80 backdrop-blur-xs text-[10px] sm:text-[11px] text-neutral-300 flex items-center gap-1 opacity-90">
-                  <ZoomIn className="h-3 w-3 text-cyan-400" />
+                <div className="absolute bottom-3 left-3 px-2 py-0.5 rounded-md bg-white/95 border border-neutral-200/90 shadow-xs text-[10px] sm:text-[11px] text-neutral-700 font-medium flex items-center gap-1">
+                  <ZoomIn className="h-3 w-3 text-cyan-600" />
                   <span>بزرگ‌نمایی</span>
                 </div>
               </div>
 
               {/* Second Image if available */}
               {st.secondImage && (
-                <div className="mt-3 pt-3 border-t border-neutral-800">
+                <div className="mt-3 pt-3 border-t border-neutral-200">
                   <div
                     onClick={() => setZoomedImage(st.secondImage!)}
-                    className="cursor-zoom-in group overflow-hidden rounded-xl border border-neutral-800 bg-black shadow-lg relative"
+                    className="cursor-zoom-in group overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100/70 shadow-xs relative p-1"
                   >
                     <img
                       src={st.secondImage}
                       alt={`${st.title} - تصویر تکمیلی`}
-                      className="w-full max-h-[440px] object-contain mx-auto group-hover:scale-[1.008] transition-transform duration-200"
+                      className="w-full max-h-[440px] object-contain mx-auto rounded-lg group-hover:scale-[1.008] transition-transform duration-200"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/80 backdrop-blur-xs text-[10px] sm:text-[11px] text-neutral-300 flex items-center gap-1 opacity-90">
-                      <ZoomIn className="h-3 w-3 text-cyan-400" />
+                    <div className="absolute bottom-3 left-3 px-2 py-0.5 rounded-md bg-white/95 border border-neutral-200/90 shadow-xs text-[10px] sm:text-[11px] text-neutral-700 font-medium flex items-center gap-1">
+                      <ZoomIn className="h-3 w-3 text-cyan-600" />
                       <span>بزرگ‌نمایی</span>
                     </div>
                   </div>
@@ -129,13 +129,13 @@ export const ExecutionStepsGallery: React.FC = () => {
       {/* Modal Zoom */}
       {zoomedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-3"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-3"
           onClick={() => setZoomedImage(null)}
         >
-          <div className="relative max-w-7xl max-h-[94vh] bg-neutral-900 p-2 rounded-xl border border-neutral-700">
+          <div className="relative max-w-7xl max-h-[94vh] bg-white p-2.5 rounded-2xl border border-neutral-300 shadow-2xl">
             <button
               onClick={() => setZoomedImage(null)}
-              className="absolute -top-3 -right-3 h-8 w-8 rounded-full bg-neutral-800 border border-neutral-600 text-white flex items-center justify-center shadow-lg"
+              className="absolute -top-3 -right-3 h-8 w-8 rounded-full bg-white border border-neutral-300 text-neutral-800 hover:bg-neutral-100 flex items-center justify-center shadow-lg transition-colors"
             >
               <X className="h-4 w-4" />
             </button>

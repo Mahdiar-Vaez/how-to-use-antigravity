@@ -50,7 +50,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex antialiased selection:bg-cyan-500/20 selection:text-cyan-300">
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 flex antialiased selection:bg-cyan-100 selection:text-cyan-900">
       {/* Sidebar on Right (RTL) */}
       <Sidebar
         activeSection={activeSection}

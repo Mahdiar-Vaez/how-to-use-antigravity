@@ -9,7 +9,7 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   code, kbd, samp, pre {
@@ -17,23 +17,23 @@
   }
 }
 
-/* Custom scrollbars for clean minimal dark theme */
+/* Custom scrollbars for clean minimal light theme */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #f4f4f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #d4d4d8;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #a1a1aa;
 }
 
 @media (min-width: 1024px) {

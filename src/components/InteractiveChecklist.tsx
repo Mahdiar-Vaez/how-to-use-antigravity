@@ -96,17 +96,17 @@ export const InteractiveChecklist: React.FC<InteractiveChecklistProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-xl rounded-2xl border border-neutral-800 bg-neutral-900 p-6 shadow-2xl text-right">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-xs p-4">
+      <div className="relative w-full max-w-xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-2xl text-right">
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-neutral-800 mb-4">
+        <div className="flex items-center justify-between pb-4 border-b border-neutral-200 mb-4">
           <div className="flex items-center gap-2">
-            <CheckSquare className="h-5 w-5 text-cyan-400" />
-            <h3 className="text-base font-bold text-neutral-100">چک‌لیست گام‌به‌گام راه‌اندازی</h3>
+            <CheckSquare className="h-5 w-5 text-cyan-600" />
+            <h3 className="text-base font-bold text-neutral-900">چک‌لیست گام‌به‌گام راه‌اندازی</h3>
           </div>
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
+            className="rounded-lg p-1.5 text-neutral-400 hover:text-neutral-800 hover:bg-neutral-100 transition-colors"
           >
             <X className="h-4 w-4" />
           </button>
@@ -114,13 +114,13 @@ export const InteractiveChecklist: React.FC<InteractiveChecklistProps> = ({
 
         {/* Progress Bar */}
         <div className="mb-5">
-          <div className="flex items-center justify-between text-xs text-neutral-400 mb-1.5 font-medium">
+          <div className="flex items-center justify-between text-xs text-neutral-600 mb-1.5 font-medium">
             <span>پیشرفت کل مراحل:</span>
-            <span className="font-mono text-cyan-300 font-bold">{percentage}%</span>
+            <span className="font-mono text-cyan-700 font-bold">{percentage}%</span>
           </div>
-          <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-950 border border-neutral-800">
+          <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-100 border border-neutral-200">
             <div
-              className="h-full bg-cyan-500 transition-all duration-300"
+              className="h-full bg-cyan-600 transition-all duration-300"
               style={{ width: `${percentage}%` }}
             />
           </div>
@@ -136,22 +136,22 @@ export const InteractiveChecklist: React.FC<InteractiveChecklistProps> = ({
                 onClick={() => toggleItem(item.id)}
                 className={`cursor-pointer rounded-xl border p-3 transition-all flex items-start gap-3 ${
                   isDone
-                    ? 'border-cyan-800/60 bg-cyan-950/20 text-neutral-200'
-                    : 'border-neutral-800 bg-neutral-950/60 text-neutral-300 hover:border-neutral-700'
+                    ? 'border-cyan-200 bg-cyan-50/70 text-neutral-900 shadow-2xs'
+                    : 'border-neutral-200 bg-neutral-50/70 text-neutral-800 hover:border-neutral-300 hover:bg-neutral-100/60'
                 }`}
               >
                 <div className="mt-0.5 shrink-0">
                   {isDone ? (
-                    <CheckCircle2 className="h-4 w-4 text-cyan-400" />
+                    <CheckCircle2 className="h-4 w-4 text-cyan-600" />
                   ) : (
-                    <Circle className="h-4 w-4 text-neutral-600" />
+                    <Circle className="h-4 w-4 text-neutral-400" />
                   )}
                 </div>
                 <div className="flex-1">
-                  <div className={`text-xs sm:text-sm font-semibold ${isDone ? 'line-through text-neutral-400' : 'text-neutral-200'}`}>
-                    <span className="ml-1 font-mono text-neutral-500">#{idx + 1}</span> {item.title}
+                  <div className={`text-xs sm:text-sm font-semibold ${isDone ? 'line-through text-neutral-400' : 'text-neutral-900'}`}>
+                    <span className="ml-1 font-mono text-neutral-400">#{idx + 1}</span> {item.title}
                   </div>
-                  <div className="text-[11px] text-neutral-400 mt-0.5 leading-relaxed">{item.hint}</div>
+                  <div className="text-[11px] text-neutral-500 mt-0.5 leading-relaxed">{item.hint}</div>
                 </div>
               </div>
             );
@@ -159,17 +159,17 @@ export const InteractiveChecklist: React.FC<InteractiveChecklistProps> = ({
         </div>
 
         {/* Footer controls */}
-        <div className="mt-5 pt-4 border-t border-neutral-800 flex items-center justify-between text-xs">
+        <div className="mt-5 pt-4 border-t border-neutral-200 flex items-center justify-between text-xs">
           <button
             onClick={handleReset}
-            className="flex items-center gap-1.5 text-neutral-400 hover:text-neutral-200 transition-colors"
+            className="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-800 transition-colors"
           >
             <RotateCcw className="h-3.5 w-3.5" />
             <span>بازنشانی پیشرفت</span>
           </button>
           <button
             onClick={onClose}
-            className="rounded-lg bg-neutral-100 px-4 py-2 font-medium text-neutral-900 hover:bg-neutral-200 transition-colors"
+            className="rounded-lg bg-neutral-900 hover:bg-neutral-800 px-4 py-2 font-medium text-white shadow-xs transition-colors"
           >
             بستن و ادامه مطالعه
           </button>
